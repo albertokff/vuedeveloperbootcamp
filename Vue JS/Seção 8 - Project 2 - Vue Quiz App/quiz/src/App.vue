@@ -24,64 +24,110 @@ export default {
       totalCorrect: 0,
       questions: [
           {
-              q: 'What is 2 + 2?', 
+              q: 'Qual o elemento da tabela períodica representado pela letra K?', 
               answers: [
                   {
-                      text: '4',
-                      is_correct: true
+                      text: 'Cobre',
+                      is_correct: false
                   },
                   {
-                      text: '3',
+                      text: 'Sódio',
                       is_correct: false 
                   },
                   {
-                      text: 'Fish',
-                      is_correct: false 
+                      text: 'Potássio',
+                      is_correct: true 
                   },
                   {
-                      text: '5',
+                      text: 'Cálcio',
                       is_correct: false 
                   }
               ] 
           },
           { 
-              q: 'How many letters are in the word "Banana"?', 
+              q: 'Quem foi o primeiro presidente do Brasil?', 
               answers: [
                   {
-                      text: '5',
+                      text: 'Campos Sales',
                       is_correct: false
                   },
                   {
-                      text: '7',
+                      text: 'Getúlio Vargas',
                       is_correct: false 
                   },
                   {
-                      text: '6',
+                      text: 'Deodoro da Fonseca',
                       is_correct: true 
                   },
                   {
-                      text: '12',
+                      text: 'Floriano Peixoto',
                       is_correct: false 
                   }
               ] 
           },
           { 
-              q: 'Find the missing letter: C_ke', 
+              q: 'O que é um triângulo escaleno?', 
               answers: [
                   {
-                      text: 'e',
+                      text: 'Que tem pelo menos dois lados iguis',
                       is_correct: false
                   },
                   {
-                      text: 'a',
+                      text: 'Que tem todos os lados diferentes',
                       is_correct: true 
                   },
                   {
-                      text: 'i',
+                      text: 'Que tem todos os lados iguais',
+                      is_correct: false 
+                  },
+                  {
+                      text: 'Que tem um ângulo de 90 graus',
                       is_correct: false 
                   }
               ] 
           },
+          { 
+              q: 'Qual lei que diz que um corpo em repouso tende a permanecer em repouso?', 
+              answers: [
+                  {
+                      text: 'Segunda Lei de Newton',
+                      is_correct: false
+                  },
+                  {
+                      text: 'Lei da ação e reação',
+                      is_correct: false 
+                  },
+                  {
+                      text: 'Terceira Lei de Newton',
+                      is_correct: false 
+                  },
+                  {
+                      text: 'Lei da Inércia',
+                      is_correct: true 
+                  }
+              ] 
+          },
+          { 
+              q: 'Qual foi o grupo terrorista que atacou as torres gêmeas no 11 de setembro?', 
+              answers: [
+                  {
+                      text: 'Hamas',
+                      is_correct: false
+                  },
+                  {
+                      text: 'ISIS',
+                      is_correct: false 
+                  },
+                  {
+                      text: 'Talibã',
+                      is_correct: false 
+                  },
+                  {
+                      text: 'Al Qaeda',
+                      is_correct: true 
+                  }
+              ] 
+          }
       ],
       results: [
           {
@@ -91,8 +137,8 @@ export default {
               desc: "Estude um pouco mais e poderá ser melhor sucedido!"
           },
           {
-              min: 3,
-              max: 3,
+              min: 5,
+              max: 5,
               title: "Uau, você é um gênio!",
               desc: "Definitivamente, estudar valeu à pena para você!"
           }

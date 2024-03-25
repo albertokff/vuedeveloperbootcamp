@@ -11,6 +11,7 @@ export default {
     computed: {
         resultIndex() {
             let index = 0;
+            console.log('O total acertado é: ' + this.totalCorrect);
 
             // e => item atual da iteração && i => índice
             this.results.forEach((e, i) => {
