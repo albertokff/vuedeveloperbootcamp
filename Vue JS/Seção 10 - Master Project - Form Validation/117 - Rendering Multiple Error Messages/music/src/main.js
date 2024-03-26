@@ -14,6 +14,6 @@ const app = createApp(App)
 
 app.use(router)
 app.use(createPinia())
-app.use(VeeValidatePlugin})
+app.use(VeeValidatePlugin)
 
 app.mount('#app')
