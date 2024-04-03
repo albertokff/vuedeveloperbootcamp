@@ -13,24 +13,31 @@
         <!-- Primary Navigation -->
         <ul class="flex flex-row mt-1">
           <li>
-            <router-link class="px-2 text-white" to="/about">Sobre</router-link>
+            <router-link class="px-2 text-white" to="/about">{{ $t('header.about') }}</router-link>
           </li>
           <!-- Navigation Links -->
           <li v-if="!userStore.userLoggedIn">
             <a class="px-2 text-white" href="#" @click.prevent="toggleAuthModal"
-              >Entrar / Registrar</a
+              >{{ $t('header.loginregister') }}</a
             >
           </li>
           <template v-else>
             <li>
-              <router-link class="px-2 text-white" to="/manage">Gerenciar</router-link>
+              <router-link class="px-2 text-white" to="/manage">{{ $t('header.manage') }}</router-link>
             </li>
             <li>
               <router-link class="px-2 text-white" to="/exit" @click.prevent="signOut"
-                >Sair</router-link
+                >{{ $t('header.exit') }}</router-link
               >
             </li>
           </template>
+        </ul>
+        <ul class="ml-auto">
+          <li>
+            <a class="px-2 text-white" href="#" @click.prevent="changeLocale">
+              {{ currentLocale }}
+            </a>
+          </li>
         </ul>
       </div>
     </nav>
@@ -45,7 +52,26 @@ import useUserStore from '@/stores/user'
 export default {
   name: 'AppHeader',
   computed: {
-    ...mapStores(useModalStore, useUserStore)
+    ...mapStores(useModalStore, useUserStore),
+    currentLocale() {
+      let language = ''
+
+      switch (this.$i18n.locale) {
+        case 'en':
+          language = 'English'
+          break
+        case 'fr':
+          language = 'French'
+          break
+        case 'ptBr':
+          language = 'Português - Br'
+          break
+        default:
+          language = 'English'
+      }
+
+      return language
+    }
   },
   methods: {
     toggleAuthModal() {
@@ -57,6 +83,26 @@ export default {
       if (this.$router.meta.requiresAuth) {
         this.$router.push({ name: 'home' })
       }
+    },
+    changeLocale() {
+      let language = ''
+
+      switch (this.$i18n.locale) {
+        case 'en':
+          language = 'fr'
+          break
+        case 'fr':
+          language = 'ptBr'
+          break
+        case 'ptBr':
+          language = 'en'
+          break
+        default:
+          language = 'ptBr'
+          break
+      }
+      
+      this.$i18n.locale = language
     }
   }
 }

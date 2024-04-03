@@ -8,10 +8,8 @@
       ></div>
       <div class="container mx-auto">
         <div class="text-white main-header-content">
-          <h1 class="font-bold text-5xl mb-5">Ouça a boa música!</h1>
-          <p class="w-full md:w-8/12 mx-auto">
-            App feito por um dev para devs. <br />
-            Curta as melhores músicas para programar! <br />
+          <h1 class="font-bold text-5xl mb-5">{{ $t('home.listen') }}</h1>
+          <p class="w-full md:w-8/12 mx-auto">{{ $t('home.devfordev') }} <br/> {{ $t('home.musicforcode') }} <br />          
           </p>
         </div>
       </div>
@@ -29,7 +27,7 @@
           class="px-6 pt-6 pb-5 font-bold border-b border-gray-200"
           v-icon-secondary="{ icon: 'headphones-alt', right: true }"
         >
-          <span class="card-title">Músicas</span>
+          <span class="card-title">{{ $t('home.songslist') }}</span>
           <!-- Icon -->
         </div>
         <!-- Playlist -->

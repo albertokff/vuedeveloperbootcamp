@@ -1,0 +1,21 @@
+{
+  "header": {
+    "about": "À propos",
+    "loginregister": "Se connecter / Registre",
+    "manage": "Gérer",
+    "exit": "Sortie"
+  },
+  "home": {
+    "listen": "Écoutez de la bonne musique",
+    "devfordev": "Application réalisée par un développeur pour les développeurs.",
+    "musicforcode": "Profitez de la meilleure musique à programmer!",
+    "songslist": "Chansons"
+  },
+  "song": {
+    "comment_count": "Donnez le premier commentaire | un commentaire | {count} commentaires"
+  },
+  "register": {
+    "accept": "J'accepte {0}",
+    "tos": "conditions d'utilisation de Dev's App Music"
+  }
+}
