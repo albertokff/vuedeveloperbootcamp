@@ -25,10 +25,12 @@
     <!-- Main Content -->
     <section class="container mx-auto">
       <div class="bg-white rounded border border-gray-200 relative flex flex-col">
-        <div class="px-6 pt-6 pb-5 font-bold border-b border-gray-200">
+        <div
+          class="px-6 pt-6 pb-5 font-bold border-b border-gray-200"
+          v-icon-secondary="{ icon: 'headphones-alt', right: true }"
+        >
           <span class="card-title">Músicas</span>
           <!-- Icon -->
-          <i class="fa fa-headphones-alt float-right text-green-400 text-xl"></i>
         </div>
         <!-- Playlist -->
         <ol id="playlist">
@@ -43,6 +45,7 @@
 <script>
 import { songsCollection } from '@/includes/firebase.js'
 import AppSongItem from '@/components/SongItem.vue'
+import IconSecondary from '@/directives/icon-secondary'
 
 export default {
   // eslint-disable-next-line vue/multi-word-component-names
@@ -56,6 +59,9 @@ export default {
   },
   components: {
     AppSongItem
+  },
+  directives: {
+    'icon-secondary': IconSecondary
   },
   async created() {
     this.getSongs()
