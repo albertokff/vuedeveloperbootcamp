@@ -20,6 +20,10 @@ const auth = firebase.auth()
 const db = firebase.firestore()
 const storage = firebase.storage()
 
+db.enablePersistence().catch((error) => {
+  console.log(`Firebase persistance error ${error.code}`)
+})
+
 //Detalhe importante: não é necessário a collection existir para poder utilizá-la, porque se não existir o firebase irá criá-la.
 const usersCollection = db.collection('users')
 const songsCollection = db.collection('songs')
