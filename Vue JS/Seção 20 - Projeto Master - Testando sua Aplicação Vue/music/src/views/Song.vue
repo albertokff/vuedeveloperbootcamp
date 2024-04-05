@@ -9,6 +9,7 @@
       <div class="container mx-auto flex items-center">
         <!-- Play/Pause Button -->
         <button
+          id="play-btn"
           @click.prevent="newSong(song)"
           type="button"
           class="z-50 h-24 w-24 text-3xl bg-white text-black rounded-full focus:outline-none"
@@ -19,7 +20,7 @@
           <!-- Song Info -->
           <div class="text-3xl font-bold">{{ song.modified_name }}</div>
           <div>{{ song.genre }}</div>
-          <div class="song-price">{{ $n(1, "currency", "ja") }}</div>
+          <div class="song-price">{{ $n(1, 'currency', 'ja') }}</div>
         </div>
       </div>
     </section>
@@ -134,11 +135,11 @@ export default {
 
       const { sort } = vm.$route.query
 
-      vm.sort = sort === '1' || sort === '2' ?sort : '1'
+      vm.sort = sort === '1' || sort === '2' ? sort : '1'
 
       vm.song = docSnapshot.data()
       vm.getComments()
-    })    
+    })
   },
   methods: {
     ...mapActions(usePlayerStore, ['newSong']),
